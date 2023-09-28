@@ -17,7 +17,11 @@ public class Book {
         return title;
     }
     //геттер поля author (автор)
-    public String getAuthor() {
+    public Author getAuthor() {
+        return author;
+    }
+    //геттер "вернуть имя автора"
+    public String getAuthorName() {
         return author.getName() + " " + author.getSecondName();
     }
     //геттер поля publoshingYear (год издания)
