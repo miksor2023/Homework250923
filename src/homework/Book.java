@@ -38,14 +38,15 @@ public class Book {
         }
         this.publishingYear = publishingYear;
     }
+    //переопределяем метод toString()
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author=" + author +
-                ", publishingYear=" + publishingYear +
-                '}';
+        return "Книга: " +
+                "название - \"" + title + "\"" +
+                ", автор - " + author +
+                ", год издания - " + publishingYear;
     }
+    //переопределяем метод equals()
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +54,7 @@ public class Book {
         Book book = (Book) o;
         return publishingYear == book.publishingYear && Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
+    //переопределяем объект hashCode()
     @Override
     public int hashCode() {
         return Objects.hash(title, author, publishingYear);
