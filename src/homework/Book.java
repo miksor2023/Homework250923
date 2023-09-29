@@ -1,5 +1,7 @@
 package homework;
 
+import java.util.Objects;
+
 public class Book {
     //объявляем поля класса Воок
     private String title;
@@ -35,6 +37,27 @@ public class Book {
             return;
         }
         this.publishingYear = publishingYear;
+    }
+    //переопределяем метод toString()
+    @Override
+    public String toString() {
+        return "Книга: " +
+                "название - \"" + title + "\"" +
+                ", автор - " + author +
+                ", год издания - " + publishingYear;
+    }
+    //переопределяем метод equals()
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishingYear == book.publishingYear && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+    //переопределяем объект hashCode()
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, publishingYear);
     }
 }
 
